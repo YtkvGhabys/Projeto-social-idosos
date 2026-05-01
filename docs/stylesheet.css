@@ -1,16 +1,36 @@
 @font-face {
-  font-family: 'MinhaFonteLocal'; /* Nome que você vai usar no código */
-  src: url('fonts/nome-da-fonte.woff2') format('woff2'), /* Formato moderno */
-       url('fonts/nome-da-fonte.woff') format('woff');   /* Formato de fallback */
-  font-weight: normal;
+  font-family: 'Merta'; /* Nome que você vai usar no código */
+  src: url('fonts/MertaSansDemoBlack-e97me.ttf') format('truetype');
+  font-weight: 700;
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Merta'; /* Nome que você vai usar no código */
+  src: url('fonts/MertaSansDemoMedium-PVajB.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Merta'; /* Nome que você vai usar no código */
+  src: url('fonts/MertaSansDemoRegular-XGljg.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
 
 :root {
     --main-colour: #2A4494;
     --secundary-colour: #71A9F7;
     --alter-colour: #A1E44E;
+
+  /* Variáveis guardando o peso (número) de cada estilo */
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-bold: 700;
+  
+  /* Variável com o nome da família da fonte */
+  --familia-principal: 'Merta', sans-serif;
 }
 
 body {
@@ -19,6 +39,7 @@ body {
     align-items: center;
     justify-self: center;
     margin: 15px 15%;
+    font-family: var(--familia-principal);
 }
 
 header {
@@ -39,6 +60,7 @@ header {
 .menu a {
     text-decoration: none;
     color: var(--main-colour);
+    font-weight: var(--font-medium);
     font-size: 25px;
 }
 
@@ -54,5 +76,38 @@ header {
 
 .date span {
     color: var(--main-colour);
+    font-weight: var(--font-bold);
     font-size: 140px;
+}
+
+.outdoor-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--main-colour);
+  padding: 15px 0;
+}
+
+.outdoor-texto {
+  display: flex;
+  width: max-content;
+  will-change: transform; /* Otimiza a renderização */
+  animation: passarTexto 20s linear infinite; /* 10s é o tempo da velocidade */
+}
+
+.outdoor-texto span {
+  font-size: 32px;
+  color: #fff;
+  font-weight: bold;
+  white-space: nowrap;     /* Impede que o texto quebre linha */
+  padding-right: 10px;     /* Espaço entre as repetições do texto */
+}
+
+/* A ANIMAÇÃO DO MOVIMENTO */
+@keyframes passarTexto {
+  0% {
+    transform: translateX(0%); /* Ponto de partida */
+  }
+  100% {
+    transform: translateX(-50%); /* Move exatamente metade do conteúdo duplicado */
+  }
 }
