@@ -1,3 +1,18 @@
+@font-face {
+  font-family: 'MinhaFonteLocal'; /* Nome que você vai usar no código */
+  src: url('fonts/nome-da-fonte.woff2') format('woff2'), /* Formato moderno */
+       url('fonts/nome-da-fonte.woff') format('woff');   /* Formato de fallback */
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+:root {
+    --main-colour: #2A4494;
+    --secundary-colour: #71A9F7;
+    --alter-colour: #A1E44E;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -16,14 +31,14 @@ header {
     align-items: center;
     min-height: 40px;
     gap: 20px;
-    box-shadow: inset 0px 0px 10px -3px #000000;
+    box-shadow: inset 0px 0px 10px -1px var(--main-colour);
     border-radius: 50px;
     padding: 10px 20px;
 }
 
 .menu a {
     text-decoration: none;
-    color: #000000;
+    color: var(--main-colour);
     font-size: 25px;
 }
 
@@ -33,10 +48,11 @@ header {
 
 .date {
     display: flex;
-    gap: 60px;
+    gap: 550px;
     justify-content: center;
 }
 
 .date span {
+    color: var(--main-colour);
     font-size: 140px;
 }
