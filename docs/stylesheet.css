@@ -19,6 +19,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Long';
+  src: url('fonts/golong.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
 :root {
     --main-colour: #2A4494;
     --secundary-colour: #71A9F7;
@@ -37,9 +44,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-self: center;
     margin: 15px 15%;
     font-family: var(--familia-principal);
+    overflow-x: hidden; /* Garante que nada que escape crie a barra de rolagem */
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header {
@@ -50,38 +64,42 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 40px;
-    gap: 20px;
-    box-shadow: inset 0px 0px 10px -1px var(--main-colour);
+    min-height: 50px;
+    gap: 40px;
+    background-color: var(--main-colour);
+    box-shadow: inset 0px 0px 20px -1px var(--secundary-colour);
     border-radius: 50px;
-    padding: 10px 20px;
+    padding: 10px 30px;
 }
 
 .menu a {
     text-decoration: none;
-    color: var(--main-colour);
+    color: #ffffff;
     font-weight: var(--font-medium);
     font-size: 25px;
 }
 
-.home{
-    
-}
-
 .date {
     display: flex;
-    gap: 550px;
+    gap: clamp(20px, 25vw, 550px); /* O espaço diminui proporcionalmente à tela */
     justify-content: center;
+    flex-wrap: wrap; /* Permite que os itens se organizem se o espaço acabar */
 }
 
 .date span {
     color: var(--main-colour);
     font-weight: var(--font-bold);
-    font-size: 140px;
+    font-size: clamp(40px, 10vw, 140px); /* Diminui a fonte apenas quando a tela for pequena */
+    white-space: nowrap;
 }
 
 .outdoor-container {
-  width: 100%;
+  width: 100vw; /* Ocupa a largura total da janela do navegador */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -120vw; /* Truque para centralizar ignorando a margem do body */
+  margin-right: -50vw;
   overflow: hidden;
   background-color: var(--main-colour);
   padding: 15px 0;
@@ -100,6 +118,7 @@ header {
   font-weight: bold;
   white-space: nowrap;     /* Impede que o texto quebre linha */
   padding-right: 10px;     /* Espaço entre as repetições do texto */
+  flex-shrink: 0;          /* Impede que o navegador tente encolher o texto para caber na tela */
 }
 
 /* A ANIMAÇÃO DO MOVIMENTO */
@@ -108,6 +127,25 @@ header {
     transform: translateX(0%); /* Ponto de partida */
   }
   100% {
-    transform: translateX(-50%); /* Move exatamente metade do conteúdo duplicado */
+    transform: translateX(-25%); /* Move exatamente metade do conteúdo duplicado */
   }
+}
+
+p, span {
+  text-align: justify;
+  font-size: clamp(14px, 10vw, 32px);
+}
+
+h2 {
+  font-family: 'Long', sans-serif;
+  text-transform: uppercase;
+}
+
+.cont-int {
+  display: flex;
+  align-content: row;
+}
+
+.introdução p{
+  
 }
