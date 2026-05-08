@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const video = document.createElement('video');
         
         // Configurações essenciais para vídeo de fundo
-        video.src = 'media/lv_0_20260507202529.mp4'; // Substitua pelo caminho do seu arquivo de vídeo
+        video.src = 'media/lv_0_20260507204305.mp4'; // Substitua pelo caminho do seu arquivo de vídeo
         video.autoplay = true;
         video.loop = true;
         video.muted = true; // Necessário para o autoplay funcionar na maioria dos navegadores
