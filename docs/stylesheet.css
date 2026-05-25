@@ -51,7 +51,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10px 15%;
+    margin: 0 15%;
     font-family: var(--familia-principal);
     overflow-x: hidden; /* Garante que nada que escape crie a barra de rolagem */
 }
@@ -64,7 +64,19 @@ main {
 }
 
 header {
-    text-align:center;   
+  position: fixed;
+  text-align:center;
+  width: 70%;
+  max-width: 1200px;
+  z-index: 999;
+  margin-top: 15px;
+
+  background: rgba(168, 184, 255, 0.45);
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
 }
 
 h1 {
@@ -102,12 +114,9 @@ button {
     font-weight: var(--font-medium);
     font-size: var(--subtítulo);
     transform: scale(0.9);
-
-    
 }
 
 .menu a:hover {
-    color: var(--main-colour);
     text-transform: uppercase;
     transition: all 0.1s cubic-bezier(0.8, 0, 0.2, 1);
     transform: scale(1.0);
@@ -115,7 +124,7 @@ button {
 
 .banner-home {
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: 450px; /* Você pode ajustar a altura desejada aqui */
     display: flex;
     justify-content: center;
@@ -211,21 +220,22 @@ button {
   width: 100%;
   display: grid;
   place-items: center;
-  background-color: #71A9F7;
+  background-color: var(--main-colour);
   border-radius: 20px;
   box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.);
 
 }
 
-.chamada p {
+.chamada p , h2{
   text-align: center;
+  color: #fff;
 }
 
 .chamada button{
   font-size: var(--botão);
   padding: 10px 20px;
   background-color: #ffffff;
-  color: var(--secundary-colour);
+  color: var(--main-colour);
   border-radius: 20px;
 }
 
