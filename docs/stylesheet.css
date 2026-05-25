@@ -67,6 +67,27 @@ header {
     text-align:center;   
 }
 
+h1 {
+  font-size: var(--display);
+}
+
+h2 {
+  font-family: 'Long', sans-serif;
+  text-transform: uppercase;
+  font-size: var(--título);
+}
+
+p {
+  text-align: justify;
+  font-size: var(--corpo);
+}
+
+button {
+  font-family: var(--familia-principal);
+  font-size: var(--botão);
+  cursor: pointer;
+}
+
 .menu {
     display: flex;
     justify-content: center;
@@ -95,7 +116,7 @@ header {
 .banner-home {
     position: relative;
     width: 100%;
-    height: 300px; /* Você pode ajustar a altura desejada aqui */
+    height: 450px; /* Você pode ajustar a altura desejada aqui */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,13 +128,13 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 90%;
+    height: 100%;
     z-index: -1; /* Garante que o vídeo fique atrás de outros elementos */
 }
 
 .video-banner video {
     width: 100%;
-    height: 90%;
+    height: 100%;
     object-fit: cover; /* Faz o vídeo cobrir toda a área sem distorcer */
 }
 
@@ -149,8 +170,6 @@ header {
 .outdoor-texto {
   display: flex;
   width: max-content;
-  will-change: transform;
-  animation: passarTexto 20s linear infinite;
   will-change: transform; /* Otimiza a renderização */
   animation: passarTexto 20s linear infinite; /* 10s é o tempo da velocidade */
 }
@@ -174,27 +193,6 @@ header {
   }
 }
 
-h1 {
-  font-size: var(--display);
-}
-
-h2 {
-  font-family: 'Long', sans-serif;
-  text-transform: uppercase;
-  font-size: var(--título);
-}
-
-p {
-  text-align: justify;
-  font-size: var(--corpo);
-}
-
-button {
-  font-family: var(--familia-principal);
-  font-size: var(--botão);
-  cursor: pointer;
-}
-
 .cont-int {
   display: flex;
   place-items: center;
@@ -205,4 +203,32 @@ button {
 .cont-int img {
   transform: rotate(90deg);
   width: 38%;
+}
+
+.chamada {
+  padding: 20px 40px;
+  max-width: 1000px;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  background-color: #71A9F7;
+  border-radius: 20px;
+  box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.);
+
+}
+
+.chamada p {
+  text-align: center;
+}
+
+.chamada button{
+  font-size: var(--botão);
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: var(--secundary-colour);
+  border-radius: 20px;
+}
+
+footer {
+  margin-top: 50px;
 }
