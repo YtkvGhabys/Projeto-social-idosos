@@ -293,6 +293,14 @@ button {
   }
 }
 
+#tipos-violencia {
+  margin-top: 50px;
+}
+
+#banner-denuncia {
+  max-height: 100px;
+}
+
 footer {
   margin-top: 50px;
 }
