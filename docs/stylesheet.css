@@ -94,6 +94,12 @@ p {
   font-size: var(--corpo);
 }
 
+a {
+  text-decoration: none;
+}
+
+
+
 button {
   font-family: var(--familia-principal);
   font-size: var(--botão);
@@ -105,11 +111,10 @@ button {
     justify-content: center;
     align-items: center;
     min-height: 50px;
-    gap: 40px;
+    gap: 50px;
 }
 
 .menu a {
-    text-decoration: none;
     color: #000000;
     font-weight: var(--font-medium);
     font-size: var(--subtítulo);
@@ -117,7 +122,7 @@ button {
 }
 
 .menu a:hover {
-    text-transform: uppercase;
+    
     transition: all 0.1s cubic-bezier(0.8, 0, 0.2, 1);
     transform: scale(1.0);
 }
@@ -205,7 +210,7 @@ button {
 .cont-int {
   display: flex;
   place-items: center;
-  align-content: row;
+  flex-direction: row;
   gap: 220px;
 }
 
@@ -218,25 +223,74 @@ button {
   padding: 20px 40px;
   max-width: 1000px;
   width: 100%;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: var(--main-colour);
   border-radius: 20px;
-  box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.);
-
+  box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.1);
 }
 
-.chamada p , h2{
+.chamada p, 
+.chamada h2 {
   text-align: center;
   color: #fff;
 }
 
 .chamada button{
+  border: none;
+  display: block; /* Garante que o botão se comporte como um bloco para centralização */
+  margin-top: 20px; 
+  margin-left: auto; /* Centraliza horizontalmente */
+  margin-right: auto; /* Como pode so pegar com o margin separadooo */
+  margin-bottom: 20px;
+  position: relative;
   font-size: var(--botão);
   padding: 10px 20px;
   background-color: #ffffff;
   color: var(--main-colour);
+  transition: all 0.2s;
   border-radius: 20px;
+}
+
+.chamada button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.chamada button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.chamada button::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+  background-color: #fff;
+}
+
+.chamada button:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 
 footer {
