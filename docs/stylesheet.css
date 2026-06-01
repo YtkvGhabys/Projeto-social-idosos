@@ -71,7 +71,7 @@ h2 {
 }
 
 p {
-  text-align: justify;
+  text-align: left;
   font-size: var(--corpo);
 }
 
@@ -360,4 +360,49 @@ button {
 
 footer {
   margin: 50px 0px 20px;
+}
+
+/* Estilização dos Canais de Denúncia (Cards) */
+.canais-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.canal-card {
+    flex: 1;
+    min-width: 200px;
+    max-width: 280px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #e0e6ed;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.canal-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+    border-color: var(--secundary-colour);
+}
+
+.canal-card strong {
+    display: block;
+    color: var(--main-colour);
+    margin-bottom: 12px;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.card-links {
+    margin-top: 10px; /* Empurra os links para o final do card */
+    padding-top: 15px;
+    font-weight: var(--font-bold);
 }
