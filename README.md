@@ -48,8 +48,18 @@ Projeto-social-idosos/
 
 A tecnologia pode ser uma importante ferramenta de impacto social. Este projeto foi desenvolvido para tornar informações sobre a proteção da pessoa idosa mais acessíveis, incentivando o respeito aos seus direitos e contribuindo para a prevenção da violência.
 
+## Aprendizados
+
+Durante o desenvolvimento deste projeto foi possível praticar:
+
+- Estruturação de páginas com HTML5;
+- Estilização responsiva utilizando CSS3;
+- Manipulação da interface com JavaScript;
+- Organização de arquivos para publicação no GitHub Pages;
+- Desenvolvimento de uma aplicação voltada para impacto social e acessibilidade.
+
 ## Licença
 
-Projeto desenvolvido para fins educacionais e de conscientização social.
+Projeto desenvolvido para fins de conscientização social e aprimoramento de habilidades na criação de soluções web.
 
 https://ytkvghabys.github.io/Projeto-social-idosos
